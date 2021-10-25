@@ -1,28 +1,33 @@
 # lambdas.tf
 
 data "aws_s3_bucket_object" "authorizer_hash" {
-  bucket = "havoc-control-api"
-  key    = "authorizer.zip.base64sha256"
+  provider = aws.east2
+  bucket   = "havoc-control-api"
+  key      = "authorizer.zip.base64sha256"
 }
 
 data "aws_s3_bucket_object" "manage_hash" {
-  bucket = "havoc-control-api"
-  key    = "manage.zip.base64sha256"
+  provider = aws.east2
+  bucket   = "havoc-control-api"
+  key      = "manage.zip.base64sha256"
 }
 
 data "aws_s3_bucket_object" "remote_task_hash" {
-  bucket = "havoc-control-api"
-  key    = "remote_task.zip.base64sha256"
+  provider = aws.east2
+  bucket   = "havoc-control-api"
+  key      = "remote_task.zip.base64sha256"
 }
 
 data "aws_s3_bucket_object" "task_control_hash" {
-  bucket = "havoc-control-api"
-  key    = "task_control.zip.base64sha256"
+  provider = aws.east2
+  bucket   = "havoc-control-api"
+  key      = "task_control.zip.base64sha256"
 }
 
 data "aws_s3_bucket_object" "task_result_hash" {
-  bucket = "havoc-control-api"
-  key    = "task_result.zip.base64sha256"
+  provider = aws.east2
+  bucket   = "havoc-control-api"
+  key      = "task_result.zip.base64sha256"
 }
 
 resource "aws_lambda_function" "authorizer" {
